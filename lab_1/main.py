@@ -29,10 +29,10 @@ def calculate_frequences(text):
     return dictionary
 
 def filter_stop_words(frequencies, stop_words):
-    if frequencies == None:
+    if frequencies is None:
         return {}
     stop_frequencies = frequencies.copy()
-    if stop_words == None:
+    if stop_words is None:
         return stop_frequencies
     stop_lst = []
     for key2 in stop_frequencies:
