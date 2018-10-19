@@ -12,7 +12,7 @@ if __name__ == '__main__':
         REFERENCE_TEXT = f.read()
         freq_dict = calculate_frequences(REFERENCE_TEXT)
 
-def propose_candidates(word, max_depth_permutations):
+def propose_candidates(word, max_depth_permutations=1):
     alf_lst = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                'u', 'v', 'w', 'x', 'y', 'z']
     num_lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -123,7 +123,7 @@ def spell_check_word(frequencies, as_is_words, word):
         return word
     if word in frequencies:
         return word
-    modified_candidates = propose_candidates(word, max_depth_permutations=1)
+    modified_candidates = propose_candidates(word)
     modified_candidates = tuple(modified_candidates)
     cleaned_candidates = keep_known(modified_candidates, frequencies)
     cleaned_candidates = tuple(cleaned_candidates)
