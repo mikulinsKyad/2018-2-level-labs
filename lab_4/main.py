@@ -9,8 +9,8 @@ if __name__ == '__main__':
 
 
 def clean_tokenize_corpus(texts):
-        if texts is None or texts != list(texts):
-            return []
+    if texts is None or texts != list(texts):
+       return []
     global_list = []
     new_text = []
     for huge_string in texts:
@@ -85,8 +85,6 @@ class TfIdfCalculator:
                     tf_idf = term_frequency/sum_frequency
                     document_dict[word] = tf_idf
             self.tf_values.append(document_dict)
-
-    
 
     def calculate_idf(self):
         import math
@@ -193,7 +191,7 @@ class TfIdfCalculator:
                 file_data.write(string_for_word[:-1])
         file_data.close()
 
-
+       
 # scenario to check your work
 test_texts = clean_tokenize_corpus(REFERENCE_TEXTS)
 tf_idf = TfIdfCalculator(test_texts)
