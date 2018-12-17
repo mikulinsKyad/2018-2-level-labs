@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
 def clean_tokenize_corpus(texts):
         if texts is None or texts != list(texts):
-        return []
+            return []
     global_list = []
     new_text = []
     for huge_string in texts:
