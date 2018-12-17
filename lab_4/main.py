@@ -9,6 +9,7 @@ if __name__ == '__main__':
 
 
 def clean_tokenize_corpus(texts):
+    alpha_list = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
     if texts is None or texts != list(texts):
        return []
     global_list = []
@@ -64,6 +65,8 @@ class TfIdfCalculator:
         self.file_names = ['5_7.txt', '15_2.txt', '10547_3.txt', '12230_7.txt']
         
     def calculate_tf(self):
+        if self.corpus is None:
+            return "ERROR"
         for document in self.corpus:
             if document is None or type(document) != list:
                 continue
